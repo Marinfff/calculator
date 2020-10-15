@@ -1,0 +1,31 @@
+{
+  "name": "empty-electron-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run build\" \"npm run electron\"",
+    "build": "webpack --config webpack.config.js",
+    "electron": "electron ."
+  },
+  "keywords": [],
+  "author": "Marin",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "@types/webpack": "^4.39.1",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "@typescript-eslint/parser": "^1.6.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4",
+    "concurrently": "^4.1.2",
+    "electron": "^6.0.9",
+    "eslint": "^6.4.0",
+    "ts-loader": "^6.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
+  }
+}

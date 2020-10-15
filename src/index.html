@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello oop!</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font: bold 14px Arial, sans-serif;
+      }
+
+      .drag {
+        height: 20px;
+        width: 100%;
+        -webkit-app-region: drag;
+        opacity: 0;
+      }
+
+      .calculator {
+        -webkit-app-region: no-drag;
+        width: 325px;
+        height: auto;
+        padding: 20px 20px 9px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background: #9dd2ea;
+        background: linear-gradient(#9dd2ea, #8bceec);
+        border-radius: 3px;
+        box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .calculator div {
+        grid-column-start: 2;
+        grid-column-end: 5;
+      }
+
+      .top .screen {
+        height: 40px;
+        width: 212px;
+        padding: 0 10px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+        font-size: 17px;
+        line-height: 40px;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        text-align: right;
+        letter-spacing: 1px;
+      }
+
+      .calculator span {
+        cursor: pointer;
+        width: 66px;
+        height: 36px;
+        background: white;
+        border-radius: 3px;
+        box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+        margin: 0 7px 11px 0;
+        color: #888;
+        line-height: 36px;
+        text-align: center;
+        user-select: none;
+        transition: all 0.2s ease;
+      }
+
+      .calculator span.operator {
+        background: #fff0f5;
+        margin-right: 0;
+      }
+
+      .calculator span.eval {
+        background: #f1ff92;
+        box-shadow: 0px 4px #9da853;
+        color: #888e5f;
+      }
+
+      .calculator span.clear {
+        background: #ff9fa8;
+        box-shadow: 0px 4px #ff7c87;
+        color: white;
+      }
+
+      .calculator span:hover {
+        background: #9c89f6;
+        box-shadow: 0px 4px #6b54d3;
+        color: white;
+      }
+
+      .calculator span.eval:hover {
+        background: #abb850;
+        box-shadow: 0px 4px #717a33;
+        color: #ffffff;
+      }
+
+      .calculator span.clear:hover {
+        background: #f68991;
+        box-shadow: 0px 4px #d3545d;
+        color: white;
+      }
+
+      .calculator span:active {
+        box-shadow: 0px 0px #6b54d3;
+        top: 4px;
+      }
+
+      .calculator span.eval:active {
+        box-shadow: 0px 0px #717a33;
+        top: 4px;
+      }
+
+      .calculator span.clear:active {
+        top: 4px;
+        box-shadow: 0px 0px #d3545d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="drag"></div>
+    <div class="calculator">
+      <span class="clear" id="clear">C</span>
+      <div class="top">
+        <div class="screen" id="screen"></div>
+      </div>
+      <span class="memory" id="M+">M+</span>
+      <span class="memory" id="M-">M-</span>
+      <span class="memory" id="MS">MS</span>
+      <span class="memory" id="MRC">MRC</span>
+      <span class="superOperator" id="Math.sin(">sin(</span>
+      <span class="superOperator" id="Math.cos(">cos(</span>
+      <span class="superOperator" id="Math.tan(">tan(</span>
+      <span class="number" id="Math.E">e</span>
+      <span class="superOperator" id="Math.sqrt(">√</span>
+      <span class="superOperator" id="Math.log(">ln(</span>
+      <span class="superOperator" id="Math.log10(">lg(</span>
+      <span class="number" id=" ** 2">^2</span>
+      <span class="number" id="7">7</span>
+      <span class="number" id="8">8</span>
+      <span class="number" id="9">9</span>
+      <span class="operator" id="+">+</span>
+      <span class="number" id="4">4</span>
+      <span class="number" id="5">5</span>
+      <span class="number" id="6">6</span>
+      <span class="operator" id="-">-</span>
+      <span class="number" id="1">1</span>
+      <span class="number" id="2">2</span>
+      <span class="number" id="3">3</span>
+      <span class="operator" id="/">/</span>
+      <span class="number" id="0">0</span>
+      <span class="number" id=".">.</span>
+      <span class="eval" id="eval">=</span>
+      <span class="operator" id="*">x</span>
+    </div>
+    <script src="../dist/index.js"></script>
+  </body>
+</html>
